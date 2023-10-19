@@ -12,4 +12,197 @@
  *
  *= require_tree .
  *= require_self
+ *= require simple_calendar
  */
+ @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+
+ .has-tasks {
+  background-color: #a1e5ab; /* Couleur de fond pour les jours avec des tâches */
+  border-radius: 50%; /* Ajoute un arrondi aux jours */
+}
+
+body {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ .task-list {
+  list-style: none;
+  padding: 10px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.task-status {
+  margin-right: 10px;
+}
+
+.task-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  font-family: 'Arial', sans-serif;
+}
+
+.task-title-show {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.task-details {
+  font-size: 14px;
+}
+
+.task-details-show {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+.form-actions {
+  text-align: center;
+}
+
+.form-actions button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* checkbox */
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Styles pour le coche */
+.custom-checkbox input {
+  display: none;
+}
+
+.custom-checkbox .checkbox-icon {
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-checkbox .checkbox-icon::after {
+  content: "\2713"; /* Coche Unicode */
+  font-size: 16px;
+  color: #007bff;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* Styles lorsque la checkbox est cochée */
+.custom-checkbox input:checked + .checkbox-icon::after {
+  opacity: 1;
+}
+
+/* Styles pour l'étiquette de la checkbox (peut être personnalisé) */
+.custom-checkbox-label {
+  margin-left: 10px;
+  color: #333;
+}
+
+/* Style pour pointer sur la checkbox */
+.custom-checkbox:hover .checkbox-icon {
+  border: 2px solid #555;
+}
+
+/* Style pour pointer sur la checkbox cochée */
+.custom-checkbox input:checked + .checkbox-icon {
+  border: 2px solid #007bff;
+}
+
+/* style pour la vue show */
+
+.container-show {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-title-show {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+p.task-details {
+  font-size: 16px;
+  color: #333; /* Couleur du texte des détails */
+  margin-bottom: 10px;
+}
+
+p.task-completed {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #28a745; /* Corrected the color for completed tasks */
+}
+
+p.task-incomplete {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #dc3545; /* Corrected the color for incomplete tasks */
+}

@@ -1,0 +1,9 @@
+<%= form_with model: @grocery do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name%>
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+  <%= f.submit %>
+<% end %>

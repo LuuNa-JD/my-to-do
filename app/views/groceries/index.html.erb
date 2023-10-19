@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Courses</title>
+</head>
+<body>
+    <div class="container">
+        <h1>My Groceries</h1>
+        <ul class="task-list">
+          <% @groceries.each do |grocery| %>
+            <li class="task-item">
+                <div class="task-status">
+                  <%= form_with(model: grocery, local: true) do |f| %>
+                    <label class="custom-checkbox">
+                      <%= f.check_box :completed, id: "task_#{grocery.id}_completed", class: "task-completed-checkbox", checked: grocery.completed, data: { confirm: "Are you sure?" } %>
+                      <span class="checkbox-icon"></span>
+                    </label>
+                  <% end %>
+                </div>
+                <h2><%= grocery.name %></h2>
+                <p> Quantity : <%= grocery.quantity %></p>
+                <%= link_to "Delete", groceries_path(grocery), method: :delete, data: { confirm: "Are you sure?" }, class: "button" %>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+    <a class="button" href="<%= root_path %>">Home</a>
+    <%= link_to "New Item", new_grocery_path, class: "button" %>
+</body>
+</html>
